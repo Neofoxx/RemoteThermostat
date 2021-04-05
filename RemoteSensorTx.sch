@@ -1293,7 +1293,7 @@ Wire Wire Line
 Text Notes 9950 3300 0    50   ~ 0
 Only output - ACTIVE LOW
 $Comp
-L KiCAD~library~symbols:OLED_LCD_I2C_0.96 U6
+L RemoteSensorTx-rescue:OLED_LCD_I2C_0.96-KiCAD~library~symbols U6
 U 1 1 5F8721F6
 P 7050 4900
 F 0 "U6" H 7328 4913 50  0000 L CNN
@@ -1345,85 +1345,6 @@ Wire Wire Line
 	7000 5150 7000 5100
 Wire Wire Line
 	6900 5250 6900 5100
-$Comp
-L Device:Thermistor_NTC TH2
-U 1 1 5F8CAE10
-P 6100 6150
-F 0 "TH2" H 5800 6200 50  0000 L CNN
-F 1 "Thermistor_NTC" H 5350 6100 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6100 6200 50  0001 C CNN
-F 3 "~" H 6100 6200 50  0001 C CNN
-	1    6100 6150
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R15
-U 1 1 5F8CC6AF
-P 6100 5700
-F 0 "R15" H 6170 5746 50  0000 L CNN
-F 1 "R" H 6170 5655 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 6030 5700 50  0001 C CNN
-F 3 "~" H 6100 5700 50  0001 C CNN
-	1    6100 5700
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C10
-U 1 1 5F8D1192
-P 6350 6150
-F 0 "C10" H 6465 6196 50  0000 L CNN
-F 1 "100nF" H 6465 6105 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6388 6000 50  0001 C CNN
-F 3 "~" H 6350 6150 50  0001 C CNN
-	1    6350 6150
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0132
-U 1 1 5F8D6D1A
-P 6100 6500
-F 0 "#PWR0132" H 6100 6250 50  0001 C CNN
-F 1 "GND" H 6105 6327 50  0000 C CNN
-F 2 "" H 6100 6500 50  0001 C CNN
-F 3 "" H 6100 6500 50  0001 C CNN
-	1    6100 6500
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6100 6500 6100 6400
-Wire Wire Line
-	6100 5550 6100 5450
-$Comp
-L power:+3V3 #PWR0133
-U 1 1 5F8E20D1
-P 6100 5450
-F 0 "#PWR0133" H 6100 5300 50  0001 C CNN
-F 1 "+3V3" H 6115 5623 50  0000 C CNN
-F 2 "" H 6100 5450 50  0001 C CNN
-F 3 "" H 6100 5450 50  0001 C CNN
-	1    6100 5450
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6100 5850 6100 5950
-Wire Wire Line
-	6100 5950 6350 5950
-Wire Wire Line
-	6350 5950 6350 6000
-Wire Wire Line
-	6350 6400 6100 6400
-Wire Wire Line
-	6350 6300 6350 6400
-Connection ~ 6100 5950
-Wire Wire Line
-	6100 5950 6100 6000
-Connection ~ 6100 6400
-Wire Wire Line
-	6100 6400 6100 6300
-Text Label 6350 5950 2    50   ~ 0
-ADC
-Text Notes 6450 5950 0    50   ~ 0
-Overkill 9000...
 Wire Wire Line
 	8300 3700 8000 3700
 Text Label 8000 3700 0    50   ~ 0
@@ -1476,4 +1397,85 @@ F 3 "" H 9100 5750 50  0001 C CNN
 	1    9100 5750
 	1    0    0    -1  
 $EndComp
+Text Notes 6450 5950 0    50   ~ 0
+Overkill 9000...
+Text Label 6350 5950 2    50   ~ 0
+ADC
+Wire Wire Line
+	6100 6400 6100 6300
+Connection ~ 6100 6400
+Wire Wire Line
+	6100 5950 6100 6000
+Connection ~ 6100 5950
+Wire Wire Line
+	6350 6300 6350 6400
+Wire Wire Line
+	6350 6400 6100 6400
+Wire Wire Line
+	6350 5950 6350 6000
+Wire Wire Line
+	6100 5950 6350 5950
+Wire Wire Line
+	6100 5850 6100 5950
+$Comp
+L power:+3V3 #PWR0133
+U 1 1 5F8E20D1
+P 6100 5450
+F 0 "#PWR0133" H 6100 5300 50  0001 C CNN
+F 1 "+3V3" H 6115 5623 50  0000 C CNN
+F 2 "" H 6100 5450 50  0001 C CNN
+F 3 "" H 6100 5450 50  0001 C CNN
+	1    6100 5450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6100 5550 6100 5450
+Wire Wire Line
+	6100 6500 6100 6400
+$Comp
+L power:GND #PWR0132
+U 1 1 5F8D6D1A
+P 6100 6500
+F 0 "#PWR0132" H 6100 6250 50  0001 C CNN
+F 1 "GND" H 6105 6327 50  0000 C CNN
+F 2 "" H 6100 6500 50  0001 C CNN
+F 3 "" H 6100 6500 50  0001 C CNN
+	1    6100 6500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C10
+U 1 1 5F8D1192
+P 6350 6150
+F 0 "C10" H 6465 6196 50  0000 L CNN
+F 1 "100nF" H 6465 6105 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6388 6000 50  0001 C CNN
+F 3 "~" H 6350 6150 50  0001 C CNN
+	1    6350 6150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R15
+U 1 1 5F8CC6AF
+P 6100 5700
+F 0 "R15" H 6170 5746 50  0000 L CNN
+F 1 "220k" H 6170 5655 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 6030 5700 50  0001 C CNN
+F 3 "~" H 6100 5700 50  0001 C CNN
+	1    6100 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Thermistor_NTC TH2
+U 1 1 5F8CAE10
+P 6100 6150
+F 0 "TH2" H 5800 6200 50  0000 L CNN
+F 1 "Thermistor_NTC" H 5350 6100 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6100 6200 50  0001 C CNN
+F 3 "~" H 6100 6200 50  0001 C CNN
+	1    6100 6150
+	1    0    0    -1  
+$EndComp
+Text Notes 5050 6350 0    50   ~ 0
+Solder 100k in parallel
 $EndSCHEMATC

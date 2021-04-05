@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name RemoteSensorTx-rescue)(type Legacy)(uri ${KIPRJMOD}/RemoteSensorTx-rescue.lib)(options "")(descr ""))
+)
